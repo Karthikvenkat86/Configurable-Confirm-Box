@@ -1,0 +1,59 @@
+<!Doctype html>
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.7.1.min.js" ></script>
+<script type="text/javascript" src="customalert.js" ></script>
+
+<script>
+// Example of Usage
+
+ $(document).ready(function(){
+   $('#withoutcustomestyle').bind('click',function(){
+   window.alert = function(){ document.write(23232323)};
+   alert();
+					$(document).customAlert({ message: {},
+								  headerStyle:{	},
+								  btnStyle: {'confirm' : 'false'},
+								  containerStyle:{ },
+								 },callback)
+		});
+					
+	 
+	   
+	   $('#customestyle').bind('click',function(){
+   
+					$(document).customAlert({ message: {
+											'font-size':'18px',
+											'font-weight':'bold',
+											'color':'green',											},
+								  headerStyle:{
+											'text':'Custome Confirm Alert.....',
+											'font-size':'18px',
+											},
+								  btnStyle: {
+											'font-weight':'bold',
+											'color':'red',
+											},
+								  containerStyle:{
+													'width':'500px',
+													'background-color':'yellowGreen',
+												 },
+								 },callback)
+					});
+					
+	   });
+	
+
+ function callback(handlerResponse) {
+	alert(handlerResponse);
+ }
+ 
+ </script>
+ </head>
+ <body>
+	<input type="button" value="Without any custom Styles" id="withoutcustomestyle" />
+	<input type="button" value="With custom Styles" id="customestyle" />
+ </body>
+ </html>
+ 
+ 
